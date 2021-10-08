@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import AppItem from "./AppItem";
 import * as apps from "./Apps";
 
-const DesktopItems = () => {
+const DesktopItems = ({ openClose }) => {
   return (
     <div className="desktop-items">
-      {apps.appsList.map((icon) => {
+      {apps.appsList.map((app) => {
         return (
           <AppItem
             type="desktop"
-            key={icon.id}
-            label={icon.label}
-            IconComponent={icon.icon}
+            key={app.id}
+            label={app.label}
+            IconComponent={app.icon}
+            onClick={() => {
+              openClose(app.id, true);
+            }}
           />
         );
       })}

@@ -180,6 +180,7 @@ img {
   background-color: #00000069;
   backdrop-filter: blur(20px);
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  z-index: 900;
 }
 
 .menu-open {
@@ -205,14 +206,16 @@ img {
   align-items: center;
   flex-direction: column;
 }
-.panel-item {
+.power-item {
   transform: none;
+  cursor: pointer;
+  transition: transform 0.1s ease-out;
 }
 
-.panel-item:hover,
-.panel-item:focus {
-  transform: scale(1.05) translateY(-3px);
-  box-shadow: 0 4px 6px -3px white;
+.power-item:hover,
+.power-item:focus {
+  transform: scale(1.1);
+  /*box-shadow: 0 4px 6px -3px white;*/
 }
 
 .menu-apps {

@@ -1,0 +1,38 @@
+.window-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* padding: 3em; */
+  width: 50%;
+  height: 50%;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #00000069;
+  background-color: #00000069;
+  backdrop-filter: blur(20px);
+  /*z-index: 2;*/
+}
+
+.window-titlebar {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 50px;
+  width: 100%;
+  border-radius: inherit;
+  top: 0%;
+  height: 30px;
+  background-color: #00000069;
+}
+
+.window-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.window-title img {
+  width: 40px;
+}

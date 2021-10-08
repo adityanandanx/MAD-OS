@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import * as apps from "./Apps";
 import { useState } from "react/cjs/react.development";
 
-const Panel = () => {
+const Panel = ({ openClose }) => {
   let [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -17,9 +17,18 @@ const Panel = () => {
       <Avatar className="avatar" onClick={openMenu} />
       <span className="panel-sep-primary"></span>
       {apps.appsList.map((app) => {
-        return <AppItem type="panel" IconComponent={app.icon} />;
+        return (
+          <AppItem
+            key={app.id}
+            type={"panel"}
+            IconComponent={app.icon}
+            onClick={() => {
+              openClose(app.id, true);
+            }}
+          />
+        );
       })}
-      <Menu open={menuOpen} />
+      <Menu openClose={openClose} open={menuOpen} />
     </div>
   );
 };
