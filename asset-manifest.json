@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MAD-OS/static/css/main.83447330.chunk.css",
-    "main.js": "/MAD-OS/static/js/main.af615ee7.chunk.js",
-    "main.js.map": "/MAD-OS/static/js/main.af615ee7.chunk.js.map",
+    "main.js": "/MAD-OS/static/js/main.927b51a9.chunk.js",
+    "main.js.map": "/MAD-OS/static/js/main.927b51a9.chunk.js.map",
     "runtime-main.js": "/MAD-OS/static/js/runtime-main.3dc9463c.js",
     "runtime-main.js.map": "/MAD-OS/static/js/runtime-main.3dc9463c.js.map",
     "static/js/2.1dcc3c8d.chunk.js": "/MAD-OS/static/js/2.1dcc3c8d.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.3dc9463c.js",
     "static/js/2.1dcc3c8d.chunk.js",
     "static/css/main.83447330.chunk.css",
-    "static/js/main.af615ee7.chunk.js"
+    "static/js/main.927b51a9.chunk.js"
   ]
 }
