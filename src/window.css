@@ -11,17 +11,22 @@
   background-color: #00000069;
   backdrop-filter: blur(20px);
   z-index: 70;
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+}
+
+.window-container-closed {
+  opacity: 0.0;
+  transform: translateY(100%);
+  pointer-events: none;
 }
 
 .window-titlebar {
-  position: absolute;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   gap: 50px;
   width: 100%;
   border-radius: inherit;
-  top: 0%;
+  padding: 5px;
   height: 30px;
   background-color: #00000069;
 }
@@ -30,11 +35,31 @@
   display: flex;
   justify-content: center;
   gap: 5px;
-  padding: 5px;
   align-items: center;
   pointer-events: none;
 }
 
 .window-title img {
   width: 40px;
+}
+
+.window-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-content {
+  padding: 5px;
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-icon {
+  transition: opacity 0.1s ease-out;
+}
+.close-icon:active {
+  opacity: 0.5;
 }

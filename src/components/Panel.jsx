@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import * as apps from "./Apps";
 import { useState } from "react/cjs/react.development";
 
-const Panel = ({ openClose }) => {
+const Panel = ({ openClose, openList }) => {
   let [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -25,6 +25,7 @@ const Panel = ({ openClose }) => {
             onClick={() => {
               openClose(app.id, true);
             }}
+            open={openList[app.id]}
           />
         );
       })}

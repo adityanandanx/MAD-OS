@@ -19,7 +19,7 @@ function App() {
 
 	return (
 		<div className="App desktop">
-			<Panel openClose={openOrCloseApp} />
+			<Panel openClose={openOrCloseApp} openList={appStates} />
 			<DesktopItems openClose={openOrCloseApp} />
 			<ProjectsApp openClose={openOrCloseApp} open={appStates[0]} />
 		</div>

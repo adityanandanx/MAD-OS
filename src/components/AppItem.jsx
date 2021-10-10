@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const AppItem = ({ onClick, type, label, IconComponent, isOpen }) => {
-	let [open, setOpen] = useState(isOpen);
+const AppItem = ({ onClick, type, label, IconComponent, open }) => {
+	// let [open, setOpen] = useState(isOpen);
 	if (type === "panel") {
 		return (
 			<div
