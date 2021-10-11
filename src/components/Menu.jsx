@@ -3,9 +3,8 @@ import AppItem from "./AppItem";
 
 import { ReactComponent as Power } from "../assets/icons/power.svg";
 import { ReactComponent as Settings } from "../assets/icons/settings.svg";
-import * as apps from "./Apps";
 
-const Menu = ({ openClose, open }) => {
+const Menu = ({ openClose, open, appProps }) => {
 	return (
 		<div className={open ? "menu menu-open" : "menu menu-closed"}>
 			<div className="power-items">
@@ -13,7 +12,7 @@ const Menu = ({ openClose, open }) => {
 				<Power className="power-item" />
 			</div>
 			<div className="menu-apps">
-				{apps.appsList.map((app) => {
+				{appProps.map((app) => {
 					return (
 						<AppItem
 							key={app.id}

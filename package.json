@@ -2,7 +2,7 @@
   "name": "mad-os",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://iMADi-ARCH.github.io/MAD-OS",
+  "homepage": "https://imadi-arch.github.io/MAD-OS",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

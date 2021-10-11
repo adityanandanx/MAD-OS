@@ -2,10 +2,9 @@ import React from "react";
 import { ReactComponent as Avatar } from "../assets/avatar.svg";
 import AppItem from "./AppItem";
 import Menu from "./Menu";
-import * as apps from "./Apps";
 import { useState } from "react/cjs/react.development";
 
-const Panel = ({ openClose, openList }) => {
+const Panel = ({ openClose, appProps }) => {
   let [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -16,7 +15,7 @@ const Panel = ({ openClose, openList }) => {
     <div className="panel">
       <Avatar className="avatar" onClick={openMenu} />
       <span className="panel-sep-primary"></span>
-      {apps.appsList.map((app) => {
+      {appProps.map((app) => {
         return (
           <AppItem
             key={app.id}
@@ -24,12 +23,13 @@ const Panel = ({ openClose, openList }) => {
             IconComponent={app.icon}
             onClick={() => {
               openClose(app.id, true);
+              console.log()
             }}
-            open={openList[app.id]}
+            open={app.isOpen}
           />
         );
       })}
-      <Menu openClose={openClose} open={menuOpen} />
+      <Menu openClose={openClose} open={menuOpen} appProps={appProps} />
     </div>
   );
 };

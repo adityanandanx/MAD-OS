@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import AppItem from "./AppItem";
-import * as apps from "./Apps";
 
-const DesktopItems = ({ openClose }) => {
+const DesktopItems = ({ openClose, appProps }) => {
   return (
     <div className="desktop-items">
-      {apps.appsList.map((app) => {
+      {appProps.map((app) => {
         return (
           <AppItem
             type="desktop"
