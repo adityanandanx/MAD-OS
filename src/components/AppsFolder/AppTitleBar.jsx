@@ -14,6 +14,9 @@ const AppTitleBar = ({ prop, openClose, setAppProps }) => {
 				if (e.clientX) setAppProps(prop.id, "x", e.clientX - prop.grabOffset[0]);
 				if (e.clientY) setAppProps(prop.id, "y", e.clientY - prop.grabOffset[1]);
 			}}
+			onClick={() => {
+				setAppProps(prop.id, "focused", true);
+			}}
 		>
 			<div className="window-title">
 				<prop.icon />

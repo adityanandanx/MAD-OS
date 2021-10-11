@@ -29,7 +29,7 @@ function App() {
 			x: 10,
 			y: 10,
 			grabOffset: [0, 0],
-			Component: ProjectsApp
+			focused: false,
 		},
 		{
 			id: 1,
@@ -39,7 +39,7 @@ function App() {
 			x: 10,
 			y: 10,
 			grabOffset: [0, 0],
-			Component: InfoApp
+			focused: false,
 		},
 		{
 			id: 2,
@@ -49,7 +49,7 @@ function App() {
 			x: 10,
 			y: 10,
 			grabOffset: [0, 0],
-			Component: ProjectsApp
+			focused: false,
 		},
 		{
 			id: 3,
@@ -59,10 +59,9 @@ function App() {
 			x: 10,
 			y: 10,
 			grabOffset: [0, 0],
-			Component: ProjectsApp
+			focused: false,
 		},
 	]);
-
 
 	const openOrCloseApp = (index, open) => {
 		let newArr = [...appProps];
@@ -80,9 +79,8 @@ function App() {
 		<div className="App desktop">
 			<Panel openClose={openOrCloseApp} appProps={appProps} />
 			<DesktopItems openClose={openOrCloseApp} appProps={appProps} />
-			{appProps.forEach((app, index) => {
-							return <app.Component openClose={openOrCloseApp} prop={app} setAppProps={setAppProps} />;
-						})}
+			<ProjectsApp openClose={openOrCloseApp} prop={appProps[0]} setAppProps={setProp} />
+			<InfoApp openClose={openOrCloseApp} prop={appProps[1]} setAppProps={setProp} />
 		</div>
 	);
 }

@@ -23,7 +23,6 @@ const Panel = ({ openClose, appProps }) => {
             IconComponent={app.icon}
             onClick={() => {
               openClose(app.id, true);
-              console.log()
             }}
             open={app.isOpen}
           />
