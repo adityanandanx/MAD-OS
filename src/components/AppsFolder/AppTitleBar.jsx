@@ -1,39 +1,29 @@
 import React from "react";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
 
-const AppTitleBar = ({
-	id,
-	windowX,
-	windowY,
-	windowSetX,
-	windowSetY,
-	grabOffset,
-	setGrabOffset,
-	openClose,
-	title,
-	IconComponent,
-}) => {
+const AppTitleBar = ({ prop, openClose, setAppProps }) => {
 	return (
 		<div
 			className="window-titlebar"
 			draggable="true"
 			onDragStart={(e) => {
 				e.dataTransfer.setDragImage(new Image(), 0, 0);
-				setGrabOffset([e.clientX - windowX, e.clientY - windowY]);
+				setAppProps(prop.id, grabOffset, [e.clientX - prop.x, e.clientY - prop.y]);
 			}}
 			onDrag={(e) => {
-				if (e.clientX) windowSetX(e.clientX - grabOffset[0]);
-				if (e.clientY) windowSetY(e.clientY - grabOffset[1]);
+				if (e.clientX) setAppProps(prop.id, x, e.clientX - grabOffset[0]);
+				if (e.clientY) setAppProps(prop.id, y, e.clientY - grabOffset[1]);
 			}}
 		>
 			<div className="window-title">
-				<IconComponent />
-				<p>{title}</p>
+				<prop.icon />
+				<p>{prop.label}</p>
 			</div>
 			<div className="window-controls">
-				<CloseIcon className="close-icon"
+				<CloseIcon
+					className="close-icon"
 					onClick={() => {
-						openClose(id, false);
+						openClose(prop.id, false);
 					}}
 				/>
 			</div>

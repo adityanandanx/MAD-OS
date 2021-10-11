@@ -1,33 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import AppTitleBar from "./AppTitleBar";
 import { ReactComponent as HammerIcon } from "../../assets/icons/hammer.svg";
 
-const ProjectsApp = ({ openClose, open }) => {
-	let [x, setX] = useState(10);
-	let [y, setY] = useState(10);
-	let [grabOffset, setGrabOffset] = useState([0, 0]);
-	const id = 0;
+const ProjectsApp = ({ openClose, prop, setAppProps }) => {
+	// let [x, setX] = useState(10);
+	// let [y, setY] = useState(10);
+	// let [grabOffset, setGrabOffset] = useState([0, 0]);
+	// const id = 0;
 
 	// if (open) {
 	return (
 		<section id="projects-window" className="windows">
 			<div
 				className={
-					open ? "window-container" : "window-container window-container-closed"
+					prop.isOpen ? "window-container" : "window-container window-container-closed"
 				}
-				style={{ left: x, top: y }}
+				style={{ left: prop.x, top: prop.y }}
 			>
 				<AppTitleBar
-					id = {id}
-					windowX = {x}
-					windowY = {y}
-					windowSetX = {setX}
-					windowSetY = {setY}
-					grabOffset = {grabOffset}
-					setGrabOffset = {setGrabOffset}
+					prop = {prop}
 					openClose = {openClose}
-					title = "My Projects"
-					IconComponent = {HammerIcon}
+					setAppProps = {setAppProps}
 				/>
 
 				<div className="window-content">
