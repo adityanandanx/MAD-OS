@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Avatar } from "../assets/avatar.svg";
 import AppItem from "./AppItem";
 import Menu from "./Menu";
-import { useState } from "react/cjs/react.development";
 
 const Panel = ({ openClose, appProps }) => {
   let [menuOpen, setMenuOpen] = useState(false);
