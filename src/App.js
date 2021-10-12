@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Panel from "./components/Panel";
-import * as apps from "./components/Apps";
 import DesktopItems from "./components/DesktopItems";
 
 // Icons
@@ -14,11 +13,6 @@ import ProjectsApp from "./components/AppsFolder/ProjectsApp";
 import InfoApp from "./components/AppsFolder/InfoApp";
 
 function App() {
-	let [appStates, setAppStates] = useState(
-		apps.appsList.map((app) => {
-			return app.isOpen;
-		})
-	);
 
 	let [appProps, setAppProps] = useState([
 		{

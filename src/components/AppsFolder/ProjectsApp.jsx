@@ -1,6 +1,5 @@
 import React from "react";
 import AppTitleBar from "./AppTitleBar";
-import { ReactComponent as HammerIcon } from "../../assets/icons/hammer.svg";
 
 const ProjectsApp = ({ openClose, prop, setAppProps }) => {
 	return (
@@ -11,7 +10,7 @@ const ProjectsApp = ({ openClose, prop, setAppProps }) => {
 					: "window-container window-container-closed"
 			}
 			style={{ left: prop.x, top: prop.y }}
-			tabindex="1"
+			tabIndex="1"
 		>
 			<AppTitleBar
 				prop={prop}
